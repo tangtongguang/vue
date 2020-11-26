@@ -5,7 +5,7 @@
     <section>
       <form>
         <div>
-          <select name="sports" id="select" v-model="selected" multiple>
+          <select name="sports" id="select" v-model="selected">
             <option disabled value="">select one value</option>
             <option value="A">football</option>
             <option value="B">basketball</option></select
@@ -55,7 +55,7 @@
       </ul>
     </section>
     <section class="watch">
-      <p><input placeholder="search" v-model="search" /></p>
+      <p><input type="text" placeholder="search" v-model.lazy="search" /></p>
     </section>
     <p>{{ count }}</p>
     <div>
@@ -84,7 +84,7 @@ export default {
   },
   data() {
     return {
-      selected: "",
+      selected: [""],
       picked: "",
       checkedNames: [],
       checked: false,
