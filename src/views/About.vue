@@ -1,8 +1,16 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+
     <section>
       <form>
+        <div>
+          <select name="sports" id="select" v-model="selected" multiple>
+            <option disabled value="">select one value</option>
+            <option value="A">football</option>
+            <option value="B">basketball</option></select
+          >{{ selected }}
+        </div>
         <div>
           <input type="radio" id="one" value="one" v-model="picked" /><label
             for="one"
@@ -76,6 +84,7 @@ export default {
   },
   data() {
     return {
+      selected: "",
       picked: "",
       checkedNames: [],
       checked: false,
