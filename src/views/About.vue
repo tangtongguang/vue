@@ -55,7 +55,7 @@
       </ul>
     </section>
     <section class="watch">
-      <p><input type="text" placeholder="search" v-model.lazy="search" /></p>
+      <p><custom-input v-model="search"></custom-input></p>
     </section>
     <p>{{ count }}</p>
     <div>
@@ -78,9 +78,11 @@
 
 <script>
 import TodoItem from "../components/TodoItem";
+import CustomInput from "@/components/CustomInput.vue";
 export default {
   components: {
-    TodoItem
+    TodoItem,
+    CustomInput
   },
   data() {
     return {
