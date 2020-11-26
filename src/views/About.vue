@@ -73,16 +73,19 @@
       }}</todo-item>
     </ol>
     <div v-html="rawHtml"></div>
+    <slot-component>&nbsp;something bad happend</slot-component>
   </div>
 </template>
 
 <script>
 import TodoItem from "../components/TodoItem";
 import CustomInput from "@/components/CustomInput.vue";
+import SlotComponent from "@/components/SlotComponent";
 export default {
   components: {
     TodoItem,
-    CustomInput
+    CustomInput,
+    SlotComponent
   },
   data() {
     return {
