@@ -1,6 +1,33 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <section>
+      <form>
+        <input type="checkbox" v-model="checked" />
+        {{ checked }}
+        <div>
+          <input
+            type="checkbox"
+            id="swim"
+            value="swim"
+            v-model="checkedNames"
+          /><label for="swim">swim</label>
+          <input
+            type="checkbox"
+            id="sport"
+            value="sport"
+            v-model="checkedNames"
+          /><label for="sport">sport</label>
+          <input
+            type="checkbox"
+            id="reading"
+            value="reading"
+            v-model="checkedNames"
+          /><label for="reading">reading</label>
+          {{ checkedNames }}
+        </div>
+      </form>
+    </section>
     <section class="dom">
       <ul>
         <template v-for="(item, name) in myObject" :key="name">
@@ -38,6 +65,8 @@ export default {
   },
   data() {
     return {
+      checkedNames: [],
+      checked: false,
       count: 0,
       interval: null,
       message: "绑定title attribute",
