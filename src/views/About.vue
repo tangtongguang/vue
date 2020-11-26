@@ -1,7 +1,9 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-
+    <section>
+      <date-picker @change="showSelect"></date-picker>
+    </section>
     <section>
       <form>
         <div>
@@ -79,13 +81,15 @@
 
 <script>
 import TodoItem from "../components/TodoItem";
+import DatePicker from "@/components/DatePicker";
 import CustomInput from "@/components/CustomInput.vue";
 import SlotComponent from "@/components/SlotComponent";
 export default {
   components: {
     TodoItem,
     CustomInput,
-    SlotComponent
+    SlotComponent,
+    DatePicker
   },
   data() {
     return {
@@ -125,6 +129,9 @@ export default {
     }
   },
   methods: {
+    showSelect(event) {
+      console.log("select changed", event.target.value);
+    },
     clearInterval(message, event) {
       console.log(message, event.target.tagName);
       clearInterval(this.interval);
