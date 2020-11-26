@@ -75,7 +75,10 @@
       }}</todo-item>
     </ol>
     <div v-html="rawHtml"></div>
-    <slot-component>&nbsp;something bad happend</slot-component>
+    <slot-component>
+      <template v-slot:header><h1>errors</h1></template>
+      <template v-slot:default> &nbsp;something bad happend </template>
+    </slot-component>
   </div>
 </template>
 
