@@ -12,7 +12,11 @@
       <p><input placeholder="search" v-model="search" /></p>
     </section>
     <p>{{ count }}</p>
-    <div><button @click="clearInterval" :title="message">stop</button></div>
+    <div>
+      <button @click="clearInterval(message, $event)" :title="message">
+        stop
+      </button>
+    </div>
     <div>
       <span v-if="seen">{{ completedTodosLength }}</span>
     </div>
@@ -66,8 +70,8 @@ export default {
     }
   },
   methods: {
-    clearInterval(event) {
-      console.log(event.target.tagName);
+    clearInterval(message, event) {
+      console.log(message, event.target.tagName);
       clearInterval(this.interval);
     },
     searchItems() {
