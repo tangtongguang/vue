@@ -2,7 +2,7 @@
   <div class="about">
     <h1>This is an about page</h1>
     <section>
-      <date-picker @change="showSelect"></date-picker>
+      <date-picker @change.self="showSelect"></date-picker>
     </section>
     <section>
       <form>
