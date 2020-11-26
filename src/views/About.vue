@@ -3,6 +3,17 @@
     <h1>This is an about page</h1>
     <section>
       <form>
+        <div>
+          <input type="radio" id="one" value="one" v-model="picked" /><label
+            for="one"
+            >one</label
+          >
+          <input type="radio" id="two" value="two" v-model="picked" /><label
+            for="two"
+            >two</label
+          >
+          {{ picked }}
+        </div>
         <input type="checkbox" v-model="checked" />
         {{ checked }}
         <div>
@@ -65,6 +76,7 @@ export default {
   },
   data() {
     return {
+      picked: "",
       checkedNames: [],
       checked: false,
       count: 0,
